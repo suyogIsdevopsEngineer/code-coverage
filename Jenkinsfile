@@ -1,8 +1,6 @@
 pipeline{
     agent any
-    options {
-		skipDefaultCheckout(true)
-   }
+    
     stages{
         stage('git checkout'){
             steps{
@@ -10,7 +8,7 @@ pipeline{
             }
         }
         stage('build'){
-            step{
+            steps{
                 sh 'mvn clean install'
             }
         }
